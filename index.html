@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banner Refinement Mockup — Platinum Plumbing QLD Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a2440;
+    --sky:#1aabe3;
+    --ink:#1d2935;
+    --muted:#647184;
+    --line:#e3e8ee;
+    --paper:#f5f7fa;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.5;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  .doc-head{padding:56px 0 28px;}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sky);font-weight:600;margin:0 0 12px;}
+  .doc-head h1{font-size:30px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
+  .doc-head p{font-size:16px;color:var(--muted);margin:0;max-width:700px;}
+
+  .panel{margin:18px 0 0;}
+  .panel-label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;padding:0 24px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:999px;}
+  .tag.cur{background:#fff5e6;color:#b9740b;}
+  .tag.good{background:#e7f7ee;color:#1e874b;}
+  .panel-label .note{font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted);font-size:13px;}
+
+  .bleed{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;}
+
+  .banner{background:var(--navy);height:62px;display:flex;align-items:center;overflow:hidden;position:relative;}
+
+  .marquee{display:flex;align-items:center;white-space:nowrap;will-change:transform;animation:scroll 38s linear infinite;}
+  .banner:hover .marquee{animation-play-state:paused;}
+  .marquee .item{color:#fff;font-size:18px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+
+  /* CURRENT — already rolls, but plain wide gap, no separator */
+  .marquee.current .item{margin-right:120px;}
+
+  /* CORRECTED — even spacing + brand droplet between repeats */
+  .marquee.refined .item{padding:0 4px;}
+  .sep{display:inline-flex;align-items:center;justify-content:center;margin:0 28px;}
+  .sep svg{width:18px;height:22px;display:block;}
+
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.marquee{animation:none;}}
+
+  .ctx-hero{height:120px;background-image:linear-gradient(135deg,#d7dbdf 0%,#c4c9cd 100%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;color:#6c7681;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+  .ctx-blue{height:90px;background:var(--sky);display:flex;align-items:flex-start;justify-content:center;padding-top:18px;}
+  .ctx-blue .drop{width:30px;height:38px;}
+
+  .caption{font-size:13px;color:var(--muted);padding:14px 24px 0;margin:0;}
+
+  .summary{margin:46px 0 64px;}
+  .summary h2{font-size:18px;font-weight:700;margin:0 0 16px;}
+  .changes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .changes li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--ink);}
+  .changes li b{display:block;font-size:13px;color:var(--sky);letter-spacing:.04em;text-transform:uppercase;margin-bottom:5px;font-weight:700;}
+  .divider{height:1px;background:var(--line);border:0;margin:40px 0;}
+
+  @media (max-width:680px){
+    .doc-head h1{font-size:24px;}
+    .changes{grid-template-columns:1fr;}
+    .marquee .item{font-size:15px;}
+    .marquee.current .item{margin-right:70px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap doc-head">
+    <p class="eyebrow">Mockup &middot; Platinum Plumbing QLD Group</p>
+    <h1>Scrolling banner &mdash; spacing &amp; continuity refinement</h1>
+    <p>The banner already scrolls, which is right. The refinement is in the rhythm: at the moment the repeats sit far apart with a plain gap and no divider, so as one phrase exits you get a stretch of empty navy and the two copies read as separate fragments. Both panels below scroll &mdash; the only difference is how continuous the line feels.</p>
+  </div>
+
+  <!-- CURRENT -->
+  <div class="panel">
+    <div class="wrap panel-label">
+      <span class="tag cur">Current</span>
+      <span class="note">scrolls, but wide plain gap &mdash; reads as two fragments</span>
+    </div>
+    <div class="bleed">
+      <div class="ctx-hero">Hero section above</div>
+      <div class="banner">
+        <div class="marquee current" aria-label="Sunshine Coast's local plumbing experts &ndash; call us today">
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+        </div>
+      </div>
+      <div class="ctx-blue">
+        <svg class="drop" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1C15 1 28 16 28 25.5C28 32.4 22.2 38 15 38C7.8 38 2 32.4 2 25.5C2 16 15 1 15 1Z" fill="#0a2440"/></svg>
+      </div>
+    </div>
+    <p class="caption">The large empty gap between repeats is what makes a passing glance catch a half-sentence with nothing beside it.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CORRECTED -->
+  <div class="panel">
+    <div class="wrap panel-label">
+      <span class="tag good">Corrected</span>
+      <span class="note">even spacing + brand droplet &mdash; reads as one continuous line</span>
+    </div>
+    <div class="bleed">
+      <div class="ctx-hero">Hero section above</div>
+      <div class="banner">
+        <div class="marquee refined" aria-label="Sunshine Coast's local plumbing experts &ndash; call us today">
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+          <span class="item">Sunshine Coast&rsquo;s Local Plumbing Experts&nbsp;&ndash;&nbsp;Call Us Today</span>
+          <span class="sep"><svg viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 1 17 10 17 15.3C17 19.5 13.4 22 9 22C4.6 22 1 19.5 1 15.3C1 10 9 1 9 1Z" fill="#1aabe3"/></svg></span>
+        </div>
+      </div>
+      <div class="ctx-blue">
+        <svg class="drop" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1C15 1 28 16 28 25.5C28 32.4 22.2 38 15 38C7.8 38 2 32.4 2 25.5C2 16 15 1 15 1Z" fill="#0a2440"/></svg>
+      </div>
+    </div>
+    <p class="caption">Tighter, even spacing with the brand droplet between repeats keeps the message continuous, so any glance lands on a full phrase. Hover to pause; reduced-motion is respected.</p>
+  </div>
+
+  <div class="wrap summary">
+    <h2>What changed</h2>
+    <ul class="changes">
+      <li><b>Even spacing</b>The wide, uneven gap between repeats is replaced with a consistent, tighter rhythm.</li>
+      <li><b>Brand droplet divider</b>The Platinum droplet sits between each repeat, so the repeats read as one message rather than stray fragments.</li>
+      <li><b>Continuous feel</b>No stretch of empty navy passes through, so a glance always catches a full phrase.</li>
+      <li><b>Same behaviour kept</b>Still a smooth scroll at the same navy/white contrast; pauses on hover and respects reduced-motion.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
